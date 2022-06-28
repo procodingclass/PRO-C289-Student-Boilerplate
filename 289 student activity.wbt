@@ -1,0 +1,45 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.021093801970505276 -0.9951002922990881 0.09659430513595721 5.851133165591365
+  position -3.469757849440465 0.4035169429726212 2.7315488807941017
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 6 3
+  floorAppearance OsbWood {
+  }
+}
+WoodenBox {
+  translation 1.5 -0.4 0.3
+}
+UR5e {
+  translation 1.5 -0.4 0.6
+  controller "student_boilerplate_289"
+}
+ConveyorBelt {
+  translation 0 0.4 0
+  size 5 0.5 0.5
+}
+Solid {
+  translation -2 0.4 0.55
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject USE red_box
+  physics Physics {
+  }
+}
